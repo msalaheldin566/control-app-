@@ -1,0 +1,162 @@
+:root{
+  --paper:#FAF7F0;
+  --ink:#1B3A34;
+  --ink-soft:#2E5148;
+  --line:#E1D8C2;
+  --gold:#A9822F;
+  --gold-soft:#F1E6C8;
+  --red:#A63A2E;
+  --red-soft:#F6E4E1;
+  --green-ok:#2E6B4F;
+  --green-ok-soft:#E4EFE7;
+  --card:#FFFFFF;
+  --muted:#6B6357;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:#20201C;
+  font-family:"Segoe UI","Tahoma",Arial,sans-serif;
+  line-height:1.6;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px;}
+header.top{
+  background:var(--ink);
+  color:#F3EFE3;
+  padding:34px 20px 28px;
+  margin-bottom:28px;
+  border-bottom:4px solid var(--gold);
+}
+header.top .wrap{padding:0;}
+header.top h1{
+  margin:0 0 6px;
+  font-size:26px;
+  font-weight:700;
+  letter-spacing:.3px;
+}
+header.top p{
+  margin:0;
+  color:#CBD8D2;
+  font-size:14.5px;
+  max-width:640px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:22px;
+  margin-bottom:20px;
+}
+.card h2{
+  margin:0 0 4px;
+  font-size:17px;
+  color:var(--ink);
+}
+.card .hint{
+  color:var(--muted);
+  font-size:13.5px;
+  margin:0 0 16px;
+}
+.dropzone{
+  border:2px dashed var(--line);
+  border-radius:6px;
+  padding:30px 20px;
+  text-align:center;
+  cursor:pointer;
+  transition:border-color .15s, background .15s;
+  background:#FDFCF8;
+}
+.dropzone.drag{
+  border-color:var(--gold);
+  background:var(--gold-soft);
+}
+.dropzone strong{color:var(--ink-soft);}
+.dropzone input{display:none;}
+.dz-icon{font-size:28px;margin-bottom:8px;display:block;}
+
+.filelist{margin-top:16px;display:flex;flex-direction:column;gap:8px;}
+.file-row{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 14px;border:1px solid var(--line);border-radius:5px;background:#FDFCF8;
+  font-size:14px;
+}
+.file-row .fname{color:var(--muted);font-size:12.5px;}
+.file-row .fmeta{display:flex;flex-direction:column;gap:2px;}
+.file-row .sname{font-weight:600;color:var(--ink);}
+.badge{
+  font-size:12px;padding:3px 10px;border-radius:20px;white-space:nowrap;
+}
+.badge.ok{background:var(--green-ok-soft);color:var(--green-ok);}
+.badge.warn{background:var(--red-soft);color:var(--red);font-weight:700;}
+.badge.err{background:#EEE;color:#888;}
+.remove-btn{
+  background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:2px 6px;
+}
+.remove-btn:hover{color:var(--red);}
+
+.actions{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:12px;
+  margin-bottom:20px;
+}
+button.action{
+  background:var(--ink);
+  color:#F3EFE3;
+  border:none;
+  border-radius:5px;
+  padding:16px 14px;
+  font-size:14.5px;
+  font-weight:600;
+  cursor:pointer;
+  text-align:right;
+  transition:background .15s, transform .1s;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+button.action .sub{font-weight:400;font-size:12px;color:#C9D6D0;}
+button.action:hover:not(:disabled){background:var(--ink-soft);}
+button.action:active:not(:disabled){transform:scale(.98);}
+button.action:disabled{background:#D8D2C4;color:#9C9584;cursor:not-allowed;}
+button.action.gold{background:var(--gold);}
+button.action.gold .sub{color:#FBF3DE;}
+button.action.gold:hover:not(:disabled){background:#8F6E27;}
+
+table.stats{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+table.stats th, table.stats td{
+  border:1px solid var(--line);
+  padding:9px 10px;
+  text-align:center;
+}
+table.stats th{
+  background:var(--ink);
+  color:#F3EFE3;
+  font-weight:600;
+  font-size:13px;
+}
+table.stats td.name-col{text-align:right;font-weight:600;}
+tr.mismatch td{background:var(--red-soft);}
+tr.mismatch td.flag{color:var(--red);font-weight:700;}
+.status-ok{color:var(--green-ok);font-weight:600;}
+.status-bad{color:var(--red);font-weight:700;}
+.summary-line{
+  margin-top:14px;font-size:13.5px;color:var(--muted);
+}
+.empty-note{
+  color:var(--muted);font-size:14px;padding:10px 0;
+}
+footer{
+  color:var(--muted);
+  font-size:12.5px;
+  text-align:center;
+  padding:24px 0 10px;
+  border-top:1px solid var(--line);
+  margin-top:10px;
+}
+#log{font-size:12.5px;color:var(--muted);margin-top:10px;white-space:pre-line;}
