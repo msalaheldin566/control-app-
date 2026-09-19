@@ -1,0 +1,30 @@
+{
+  "name": "cumulative-control-system",
+  "version": "1.0.0",
+  "description": "نظام حساب الكنترول التراكمي - كلية طب الأسنان",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win",
+    "dist:portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^31.7.6",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.drmohamedsalah.control",
+    "productName": "نظام حساب الكنترول التراكمي",
+    "directories": { "output": "dist" },
+    "files": [ "index.html", "css/**", "js/**", "main.js" ],
+    "win": {
+      "target": [ "nsis", "portable" ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "نظام الكنترول التراكمي"
+    }
+  }
+}
